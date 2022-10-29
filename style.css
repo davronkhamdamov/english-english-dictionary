@@ -167,8 +167,9 @@ i {
 /* loader */
 .loader {
     position: absolute;
-    top: 28%;
-    left: 13.7%;
+    top: 28vh;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .card {
