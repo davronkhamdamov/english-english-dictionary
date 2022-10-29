@@ -11,11 +11,13 @@ const playMediaEl = document.getElementById('play-media')
 const playMediEl = document.getElementById('play-media1')
 const heroEl = document.querySelector('.hero')
 const exampleEl = document.querySelector('.example')
+const loaderEl = document.getElementById('loader')
 heroEl.style.display = "none"
 document.addEventListener('DOMContentLoaded', () => {
     inputEl.focus()
 })
 buttonEl.addEventListener('click', (e) => {
+    loaderEl.classList.remove('display')
     e.preventDefault()
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${inputEl.value.trim()}`)
         .then(res => res.json())
@@ -23,7 +25,6 @@ buttonEl.addEventListener('click', (e) => {
     heroEl.style.display = "block";
     inputEl.value = ''
 })
-
 /* <div class="tet">
      <p class="examp">Example<p class="example__text"></p></p>
     </div>
@@ -31,6 +32,9 @@ buttonEl.addEventListener('click', (e) => {
 */
 function result(data) {
     data.forEach(el => {
+        setTimeout(() => {
+            loaderEl.classList.add('display')
+        },1000)
         const tetEl = document.createElement('div')
         const exampleTextEl = document.createElement('p')
         const exampEl = document.createElement('p')
