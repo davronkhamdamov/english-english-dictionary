@@ -30,7 +30,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    height: 90vh;
+    height: 660px;
     user-select: none;
     background: #fff;
     box-shadow: var(--shadow);
@@ -85,11 +85,12 @@ form {
 .hero {
     max-width: 1000px;
     margin: 0 auto;
-    height: 61vh;
+    height: 450px;
     margin-top: 40px;
     border-radius: 10px;
     padding: 37px 20px;
     box-shadow: var(--shadow);
+    overflow-y: scroll;
 }
 
 .hero__text {
@@ -111,15 +112,12 @@ span {
 
 .example__txt {
     line-height: 40px;
-    font-weight: 800;
-    font-size: 30px;
     margin-top: 10px;
 }
 
 .example__text {
-    display: inline;
     margin-left: 20px;
-    line-height: 60px;
+    line-height: 30px;
     font-weight: 600;
 }
 
@@ -130,6 +128,9 @@ span {
 }
 
 .play-media {
+    position: fixed;
+    top: 74%;
+    right: 20%;
     width: 180px;
     height: 100px;
     display: flex;
@@ -166,20 +167,19 @@ i {
 /* loader */
 .loader {
     position: absolute;
-    top: 59.5%;
-    left: 16.8%;
-    transform: translateY(-50%);
+    top: 28%;
+    left: 13.7%;
 }
 
 .card {
     width: 100%;
     width: 1000px;
-    height: 61.1vh;
+    height: 450px;
     background: #fff;
     margin: 10px;
-    padding: 20px;
+    padding: 16px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    position: relative;
 }
 
 .card .image img {
@@ -191,11 +191,10 @@ i {
 }
 
 .card.is-loading :nth-child(2) {
-    width: 90px;
+    width: 600px;
 }
-.card.is-loading :nth-child(3) {
-    width: 700px;
-}
+
+
 .card.is-loading .image,
 .card.is-loading h2,
 .card.is-loading p,
@@ -212,32 +211,33 @@ i {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    position: relative;
-    top: 40px;
+    position: absolute;
+    bottom: 11.8%;
+    right: 21.4%;
 }
 
 .card.is-loading .image {
+    width: 241px;
     height: 40px;
-    width: 240px;
-    margin-top: 30px;
+    margin-top: 31px;
 }
 
 .card.is-loading h2 {
-    width: 300px;
+    width: 303px;
     height: 30px;
-    margin-bottom: 22px;
+    margin-top: 10px;
 }
 
 .card.is-loading :nth-child(5) {
-    position: relative;
-    left: 76px;
+    position: absolute;
+    right: 8%;
     width: 110px;
-    bottom: 20px;
+    bottom: 14%;
 }
 
 .card.is-loading p {
     height: 30px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 @-webkit-keyframes shine {

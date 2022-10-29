@@ -34,26 +34,34 @@ function result(data) {
     data.forEach(el => {
         setTimeout(() => {
             loaderEl.classList.add('display')
-        },1000)
+        }, 1000)
         const tetEl = document.createElement('div')
-        const exampleTextEl = document.createElement('p')
         const exampEl = document.createElement('p')
-        const exampTxtEl = document.createElement('p')
-        exampTxtEl.classList.add('example__txt')
-        exampTxtEl.textContent = el.meanings[0].partOfSpeech
         exampleEl.innerHTML = ''
         tetEl.classList.add('tet')
-        exampleTextEl.classList.add('example__text')
         exampEl.classList.add('examp')
         heroTitleEl.textContent = el.word;
         heroResultEl.textContent = el.phonetics[0].text || el.phonetics[1].text;
-        exampleTextEl.textContent = el.meanings[0].definitions[0].example;
-        phoragraphEl.textContent = el.meanings[0].definitions[0].definition;
-        exampEl.textContent = exampleTextEl.textContent == '' ? '' : 'Example :'
         playEl.src = el.phonetics[0].audio || el.phonetics[1].audio;
-        console.log(el.meanings[0].partOfSpeech);
-        exampEl.append(exampleTextEl);
-        tetEl.append(exampTxtEl, exampEl);
+        el.meanings.forEach((e) => {
+            e.definitions.forEach((ele) => {
+                for (let key in ele) {
+                    console.log(ele);
+                    if (key === 'definition') {
+                        console.log(ele[`${key}`]);
+                        const exampleTextEl = document.createElement('p')
+                        exampleTextEl.classList.add('example__txt')
+                        exampleTextEl.textContent = ele[`${key}`];
+                        tetEl.append(exampleTextEl);
+                    } else if (key === 'example') {
+                        const exampTxtEl = document.createElement('p')
+                        exampTxtEl.classList.add('example__text')
+                        exampTxtEl.textContent = "Example:  " + ele[`${key}`];
+                        tetEl.append(exampTxtEl)
+                    }
+                }
+            });
+        });
         exampleEl.append(tetEl);
     })
 }
