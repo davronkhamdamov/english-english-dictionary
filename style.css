@@ -167,7 +167,7 @@ i {
 /* loader */
 .loader {
     position: absolute;
-    top: 29vh;
+    top: 30vh;
     left: 50%;
     transform: translateX(-50%);
 }
