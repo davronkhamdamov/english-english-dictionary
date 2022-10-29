@@ -7,13 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="shortcut icon" href="icons8-translation-32.png" type="image/x-icon">
 </head>
 
 <body>
     <header>
         <div class="main">
             <div class="container">
+                <h1 class="title">Dictionary</h1>
+                <div class="box">
+                    <form action="" method="">
+                        <input id="input" type="text" placeholder="Enter yours world">
+                        <button id="btn">Search</button>
+                    </form>
+                </div>
+                <div class="hero">
+                    <div class="hero__text">
+                        <h1 class="hero__title"></h1><span>__</span>
+                        <h1 id="hero-result"></h1>
+                    </div>
+                    <div class="hero__phoragraph">
+                        <p class="phoragraph"></p>
+                        <div class="example">
+
+                        </div>
+                    </div>
+                    <div class="play-media">
+                        <div class="audio">
+                            <i class="fa-solid fa-play"></i>
+                            <i class="fa-solid fa-pause hidden"></i>
+                            <audio id="play">
+                        </div>
+                        <p id="play-media">Play the word</p>
+                        <p id="play-media1" class="display">Pause the word</p>
+                    </div>
+                </div>
             </div>
+        </div>
         </div>
     </header>
     <script src="main.js"></script>
